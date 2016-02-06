@@ -1,17 +1,19 @@
 .PHONY: build rebuild watch
 
+SITE_CMD = stack exec site
+
 build:
-	cabal run $@
+	$(SITE_CMD) $@
 
 rebuild: tmpdir := $(shell mktemp -d)
 rebuild:
 	mv _site/.git $(tmpdir)/.git
-	cabal run $@
+	$(SITE_CMD) $@
 	mv $(tmpdir)/.git _site/.git
 	rmdir $(tmpdir)
 
 watch:
-	cabal run $@
+	$(SITE_CMD) $@
 
 push: rebuild
 	git submodule update
