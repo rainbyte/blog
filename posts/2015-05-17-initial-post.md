@@ -1,7 +1,7 @@
 ---
 title: Initial post
 author: rainbyte
-date: 2015-05-17T21:01:00
+published: 2015-05-17 21:01:00
 tags: hello
 ---
 

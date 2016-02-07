@@ -1,7 +1,7 @@
 ---
 title: How-to update a git submodule
 author: rainbyte
-date: 2015-07-02T04:29:59
+published: 2015-07-02 04:29:59
 tags: workflow, git
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Grouping by key with Python
 author: rainbyte
-date: 2015-05-19T23:02:37
+published: 2015-05-19 23:02:37
 tags: python, snippets, batch
 ---
 

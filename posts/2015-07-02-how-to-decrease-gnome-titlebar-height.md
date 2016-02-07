@@ -1,7 +1,7 @@
 ---
 title: How-to decrease gnome title-bar height
 author: rainbyte
-date: 2015-07-02T03:15:07
+published: 2015-07-02 03:15:07
 tags: gnome, snippets, css
 ---
 
