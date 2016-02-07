@@ -19,14 +19,14 @@ push: rebuild
 	git submodule update
 
 	@echo -e '\nPushing _blog...\n'
-	cd _site
-	git add .
-	git commit -m "Site update"
-	git push
+	cd _site \
+	&& git checkout master \
+	&& git add . \
+	&& git commit -m "Site update" \
+	&& git push
 
 	@echo -e '\nLinking submodule...\n'
-	cd ..
-	git add _blog
+	git add _site
 	git commit -m "Site update"
 	git push
 
