@@ -1,15 +1,10 @@
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid ((<>))
 import           Hakyll
-import           Text.Pandoc.Options
 
 
 main :: IO ()
 main = hakyllWith customSiteConfig $ do
-    match "js/**" $ do
-        route   idRoute
-        compile copyFileCompiler
-
     match "images/*" $ do
         route   idRoute
         compile copyFileCompiler
@@ -30,7 +25,7 @@ main = hakyllWith customSiteConfig $ do
     -- Render posts
     match "posts/*" $ do
         route $ setExtension "html"
-        compile $ customPandocCompiler
+        compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html"
                     (postCtx tags <> defaultContext)
             >>= loadAndApplyTemplate "templates/default.html"
@@ -108,11 +103,3 @@ customSiteConfig :: Configuration
 customSiteConfig = defaultConfiguration
     { destinationDirectory = "_site"
     }
-
-customPandocCompiler :: Compiler (Item String)
-customPandocCompiler =
-    let customReaderOptions = defaultHakyllReaderOptions
-        customWriterOptions = defaultHakyllWriterOptions
-            { writerHighlight = False
-            }
-    in pandocCompilerWith customReaderOptions customWriterOptions
