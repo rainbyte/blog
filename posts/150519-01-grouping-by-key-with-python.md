@@ -58,7 +58,7 @@ There are some remarkable points in this code:
 
 This code would print something like this:
 
-```txt
+```
 1
 (1, 'a')
 (1, 'z')
