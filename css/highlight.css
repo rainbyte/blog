@@ -20,7 +20,10 @@ td.sourceCode {
 
 code {
     color: #f8f8f2;
-    background-color: #272822;
+    background-color: #49483e;
+    border-radius: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 pre, pre > code {
