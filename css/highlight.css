@@ -36,6 +36,7 @@ pre {
     border: 4px inset #a59f85;
     border-radius: 8px;
     padding: 8px;
+    overflow-x: auto;
 }
 
 td.nums pre {
