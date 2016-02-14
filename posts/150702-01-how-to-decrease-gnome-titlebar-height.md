@@ -5,7 +5,7 @@ published: 2015-07-02 03:15:07
 tags: gnome, snippets, css
 ---
 
-I've started using [Firefox](https://www.mozilla.org/firefox) again, and after some time, I noticed that the gnome window title-bar was eating a lot of screen space.
+I've started using [Firefox](https://www.mozilla.org/firefox) again, and after some time I noticed that Gnome window title-bars were eating a lot of screen space.
 
 <!-- more -->
 
@@ -24,7 +24,7 @@ After tweaking the snippet a bit, I added it to `~/.config/gtk-3.0/gtk.css`, lik
 
 .header-bar.default-decoration .button.titlebutton {
     padding-top: 1px;
-    padding-bottom: 1px
+    padding-bottom: 1px;
     border-width: 0;
 }
 ```
