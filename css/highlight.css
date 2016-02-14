@@ -57,8 +57,20 @@ code.sourceCode span.al { color: #ef2929 } /* Alert */
 code.sourceCode span.fu { color: #f92672 } /* Function */
 code.sourceCode span.re { } /* RegionMarker */
 code.sourceCode span.er { color: #a40000; border: 1px solid #ef2929 } /* Error */
-
+code.sourceCode span.cn { } /* Constant */
+code.sourceCode span.sc { } /* SpecialChar */
+code.sourceCode span.vs { } /* VerbatimString */
+code.sourceCode span.ss { } /* SpecialString */
 code.sourceCode span.im { color: #f92672 } /* Import */
+code.sourceCode span.do { } /* Documentation */
+code.sourceCode span.an { } /* Anotation */
+code.sourceCode span.cv { } /* CommentVar */
+code.sourceCode span.va { } /* Variable */
 code.sourceCode span.cf { color: #f92672 } /* ControlFlow */
 code.sourceCode span.op { color: #f92672 } /* Operator */
 code.sourceCode span.bu { color: #f92672 } /* BuiltIn */
+code.sourceCode span.ex { } /* Extension */
+code.sourceCode span.pp { } /* Preprocessor */
+code.sourceCode span.at { } /* Attribute */
+code.sourceCode span.in { } /* Information */
+code.sourceCode span.wa { } /* Warning */
