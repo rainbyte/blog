@@ -13,7 +13,7 @@ Just wanted to say hello for first time! :)
 
 Let's try some example code with markdown and pygments:
 
-```racket
+```scheme
 #lang racket
 
 (define (say-hello!)
