@@ -18,6 +18,12 @@ td.sourceCode {
     padding-left: 5px;
 }
 
+p code {
+    border-style: outset;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: black;
+}
+
 code {
     color: #f8f8f2;
     background-color: #5A5950;
