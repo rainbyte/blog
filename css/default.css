@@ -50,9 +50,13 @@ h2 {
 }
 
 p {
-    line-height: 1.75em;
-    margin-top: 1.75em;
-    margin-bottom: 1.75em;
+    line-height: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+li {
+    line-height: 2em;
 }
 
 div.info {
