@@ -18,7 +18,7 @@ td.sourceCode {
     padding-left: 5px;
 }
 
-p code {
+*:not(pre) > code {
     border-style: outset;
     background-color: rgba(0, 0, 0, 0.05);
     color: black;
