@@ -28,6 +28,7 @@ main = hakyllWith customSiteConfig $ do
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html"
                     (postCtx tags <> defaultContext)
+            >>= saveSnapshot "content"
             >>= loadAndApplyTemplate "templates/default.html"
                     (postCtx tags <> defaultContext)
             >>= relativizeUrls
@@ -42,6 +43,15 @@ main = hakyllWith customSiteConfig $ do
         let title = "Tag: " ++ tag
         route idRoute
         compile $ postPage tags title pattern
+
+    -- Render feed
+    create ["atom.xml"] $ do
+        route idRoute
+        compile $ do
+            let feedCtx = postCtx tags <> bodyField "description"
+            posts <- fmap (take 10) . recentFirst =<<
+                loadAllSnapshots "posts/*" "content"
+            renderAtom customFeedConfig feedCtx posts
 
     -- Home page
     create ["index.html"] $ do
@@ -102,4 +112,13 @@ finish context item =
 customSiteConfig :: Configuration
 customSiteConfig = defaultConfiguration
     { destinationDirectory = "_site"
+    }
+
+customFeedConfig :: FeedConfiguration
+customFeedConfig = FeedConfiguration
+    { feedTitle       = "(λblog.rainbyte)"
+    , feedDescription = "A site about things I enjoy and would like to share"
+    , feedAuthorName  = "rainbyte"
+    , feedAuthorEmail = "rainbyte@tuta.io"
+    , feedRoot        = "http://rainbyte.github.io"
     }
