@@ -29,9 +29,7 @@ main = hakyllWith customSiteConfig $ do
             >>= loadAndApplyTemplate "templates/post.html"
                     (postCtx tags <> defaultContext)
             >>= saveSnapshot "content"
-            >>= loadAndApplyTemplate "templates/default.html"
-                    (postCtx tags <> defaultContext)
-            >>= relativizeUrls
+            >>= finish (postCtx tags <> defaultContext)
 
     -- Render posts archive
     create ["posts.html"] $ do
