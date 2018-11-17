@@ -28,6 +28,9 @@ code {
     color: #f8f8f2;
     background-color: #5A5950;
     border-radius: 5px;
+}
+
+code > * {
     padding-left: 4px;
     padding-right: 4px;
 }
