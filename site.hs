@@ -1,6 +1,12 @@
 {-# LANGUAGE OverloadedStrings #-}
+
+import           Control.Monad.State.Class
+import           Data.List (intercalate)
 import           Data.Monoid ((<>))
 import           Hakyll
+import           Text.Pandoc.Definition
+import           Text.Pandoc.Walk
+import           Text.Parsec
 
 
 main :: IO ()
@@ -25,7 +31,10 @@ main = hakyllWith customSiteConfig $ do
     -- Render posts
     match "posts/*" $ do
         route $ setExtension "html"
-        compile $ pandocCompiler
+        compile $ pandocCompilerWithTransform 
+                    defaultHakyllReaderOptions
+                    defaultHakyllWriterOptions
+                    transformCustomMarkdownRuby
             >>= loadAndApplyTemplate "templates/post.html"
                     (postCtx tags <> defaultContext)
             >>= saveSnapshot "content"
@@ -120,3 +129,50 @@ customFeedConfig = FeedConfiguration
     , feedAuthorEmail = "rainbyte@tuta.io"
     , feedRoot        = "http://rainbyte.github.io"
     }
+
+
+-- Pandoc filters
+
+transformCustomMarkdownRuby :: Pandoc -> Pandoc
+transformCustomMarkdownRuby = walk handleInline
+  where
+    handleInline :: Inline -> Inline
+    handleInline (Str s) = case (parse markdownRuby "" s) of
+        (Left _)     -> Str s
+        (Right rubies) -> RawInline (Format "html") (rubiesToHtml rubies)
+    handleInline x       = x
+    markdownRuby :: Parsec String () [(String,[(String,String)],String)]
+    markdownRuby = many $ choice [try ruby, fallback]
+      where
+        ruby :: Parsec String () (String,[(String,String)],String)
+        ruby = (,,) -- (openingText,rubyPairs,closingText)
+            <$> (many $ noneOf "{")
+            <*> between (char '{') (char '}') markdownRubyPairs
+            <*> (many $ noneOf "{")
+        fallback :: Parsec String () (String,[(String,String)],String)
+        fallback = (,,) -- (openingText,rubyPairs,closingText)
+            <$> (many1 $ anyChar)
+            <*> pure []
+            <*> pure ""
+    markdownRubyPairs :: Parsec String () [(String,String)]
+    markdownRubyPairs = do
+        elems <- taggedElems
+        tags  <- many1 rubyTag
+        let sameLen = length elems == length tags
+            matchingPairs = zip elems tags
+            singlePair = [(mconcat elems,intercalate "|" tags)]
+        pure $ if sameLen then matchingPairs else singlePair
+      where
+        taggedElems :: Parsec String () [String]
+        taggedElems = fmap (fmap pure) (many (noneOf "|}"))
+        rubyTag = char '|' *> (many $ noneOf "|}")
+    rubyToHtml :: (String,[(String,String)],String) -> String
+    rubyToHtml (prev,pairs,next) = prev <> pairsToHtml pairs <> next 
+      where
+        pairsToHtml [] = ""
+        pairsToHtml ps = (wrap . mconcat . fmap pairToHtml) ps
+        pairToHtml ("","") = ""
+        pairToHtml (elem,tag) = elem <> "<rt>" <> tag <> "</rt>"
+        wrap x = "<ruby>" <> x <> "</ruby>"
+    rubiesToHtml :: [(String,[(String,String)],String)] -> String
+    rubiesToHtml = mconcat . fmap rubyToHtml
