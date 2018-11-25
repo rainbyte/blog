@@ -1,6 +1,6 @@
 .PHONY: build rebuild watch
 
-SITE_CMD = stack exec site
+SITE_CMD = stack exec -- site
 
 build:
 	$(SITE_CMD) $@
@@ -13,7 +13,7 @@ rebuild:
 	rmdir $(tmpdir)
 
 watch:
-	$(SITE_CMD) $@
+	$(SITE_CMD) $@ --host 0.0.0.0
 
 push: rebuild
 	git submodule update
