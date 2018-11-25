@@ -7,14 +7,14 @@ body {
 
 header {
     border-bottom: 2px solid black;
-    margin-bottom: 30px;
+    margin-bottom: 2em;
     padding: 12px 0px 12px 0px;
 }
 
 div#logo a {
     color: black;
     float: left;
-    font-size: 18px;
+    font-size: 1.6em;
     font-weight: bold;
     text-decoration: none;
 }
@@ -25,9 +25,9 @@ header nav {
 
 header nav a {
     color: black;
-    font-size: 18px;
+    font-size: 1em;
     font-weight: bold;
-    margin-left: 12px;
+    margin-left: 0.8em;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -35,18 +35,18 @@ header nav a {
 footer {
     border-top: solid 2px black;
     color: #555;
-    font-size: 12px;
-    margin-top: 30px;
+    font-size: 0.8em;
+    margin-top: 2em;
     padding: 12px 0px 12px 0px;
     text-align: right;
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 1.4em;
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 1.2em;
 }
 
 p {
@@ -61,7 +61,7 @@ li {
 
 div.info {
     color: #555;
-    font-size: 14px;
+    font-size: 0.8em;
     font-style: italic;
 }
 
