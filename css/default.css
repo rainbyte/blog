@@ -1,12 +1,17 @@
 body {
     color: black;
+    display: flex;
+    flex-direction: column;
     font-size: 16px;
     margin: 0px auto 0px auto;
-    width: 60%;
+    width: 90%;
 }
 
 header {
+    align-items: center;
+    display: flex;
     border-bottom: 2px solid black;
+    justify-content: space-between;
     margin-bottom: 2em;
     padding: 12px 0px 12px 0px;
 }
@@ -20,22 +25,28 @@ div#logo a {
 }
 
 header nav {
-    text-align: right;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 header nav a {
     color: black;
     font-size: 1em;
     font-weight: bold;
-    margin-left: 0.8em;
+    margin: 0.2em 0.4em;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+#content {
+    flex: 1 0 auto;
 }
 
 footer {
     border-top: solid 2px black;
     color: #555;
     font-size: 0.8em;
+    flex: none;
     margin-top: 2em;
     padding: 12px 0px 12px 0px;
     text-align: right;
@@ -101,4 +112,41 @@ div.info {
 
 .gh-comment .gh-comment-body {
     margin-left: 1em;
+}
+
+@media
+only screen and (max-width: 1000px) {
+    /* Small size screen */
+    header {
+        flex-direction: column;
+    }
+    header nav {
+        justify-content: center;
+        margin-top: 1em;
+    }
+}
+
+@media
+only screen and (min-width: 1000px) and (max-width: 1300px) {
+    /* Medium size screen */
+    body {
+        width: 80%;
+    }
+}
+
+@media
+only screen and (min-width: 1300px) {
+    /* Large size screen */
+    body {
+        width: 70%;
+    }
+}
+
+@media
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+    /* High-dpi */
+    body {
+        font-size: 32px;
+    }
 }
