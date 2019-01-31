@@ -22,10 +22,12 @@ title: Useful commands and snippets cheatsheet
 - Common: `aria2c $url`
 - Magnet: `aria2c $magnet-uri`
 - Torrent: `aria2c $torrent-file`
+- Site (spider copy): `httrack $url --path $folder`
+- Site (single page): `httrack $url --path $folder --near --robots=0 --depth=1`
 
 ## fish
 
-- Create cmd alias: `alias $name "$command"`
+- Create cmd shortcut: `alias -s $name "$command"`
 - Save function: `funcsave $function`
 
 ## gnome extensions
