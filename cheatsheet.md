@@ -10,6 +10,11 @@ title: Useful commands and snippets cheatsheet
 - Cmd info (detailed): `man $command`
 - Cmd info (summary): `tldr $command`
 
+## dbus interaction
+
+- Inspect notifications: `dbus-monitor interface='org.freedesktop.Notifications'`
+- Inspect notifications: `dbus-monitor interface='org.gtk.Notifications'`
+
 ## downloads from terminal
 
 - Common: `aria2c $url`
