@@ -14,6 +14,8 @@ title: Useful commands and snippets cheatsheet
 
 - Inspect notifications: `dbus-monitor interface='org.freedesktop.Notifications'`
 - Inspect notifications: `dbus-monitor interface='org.gtk.Notifications'`
+- Show $BUS_NAME PID (1): `dbus-send --session --print-reply --dest=org.freedesktop.DBus / org.freedesktop.DBus.GetConnectionUnixProcessID string:$BUS_NAME`
+- Show $BUS_NAME PID (2): `gdbus call --session --dest org.freedesktop.DBus --object-path / --method org.freedesktop.DBus.GetConnectionUnixProcessID $BUS_NAME`
 
 ## downloads from terminal
 
