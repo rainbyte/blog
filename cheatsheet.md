@@ -42,6 +42,9 @@ title: Useful commands and snippets cheatsheet
 - Connect: `mysql -D $db-name -u $db-user -p`
 - Dump: `mysqldump -u $db-user $db-name > $file`
 
+## python
+- Avoid Conda autostart: `conda config --set auto_activate_base False`
+
 ## systemd
 
 - Follow logs: `journalctl -f -n0`
