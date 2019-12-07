@@ -36,8 +36,8 @@ title: Useful commands and snippets cheatsheet
 - Enable: `gnome-shell-extension-tool -e $extension-uuid`
 - Disable:  `gnome-shell-extension-tool -d $extension-uuid`
 - Paths:
-    - System: `/usr/share/gnome-shell/extensions/`
-    - User: `$HOME/.local/share/gnome-shell/extensions/`
+  - System: `/usr/share/gnome-shell/extensions/`
+  - User: `$HOME/.local/share/gnome-shell/extensions/`
 
 ## mariadb / mysql
 
@@ -45,6 +45,7 @@ title: Useful commands and snippets cheatsheet
 - Dump: `mysqldump -u $db-user $db-name > $file`
 
 ## python
+
 - Avoid Conda autostart: `conda config --set auto_activate_base False`
 
 ## systemd
