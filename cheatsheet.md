@@ -30,6 +30,15 @@ title: Useful commands and snippets cheatsheet
 - Create cmd shortcut: `alias -s $name "$command"`
 - Save function: `funcsave $function`
 
+## flatpak
+
+- App info (installed): `flatpak info $app`
+- App info (remote): `flatpak remote-info $repo --app $app`
+- Expose folder to app: `flatpak --filesystem=$folder:ro $app`
+- Expose envvar to app: `flatpak --env=$envvar=$value $app`
+- Remove unneeded deps: `flatpak remove --unused`
+- Show running apps: `flatpak ps`
+
 ## gnome extensions
 
 - Reload: `gnome-shell-extension-tool -r $extension-uuid`
