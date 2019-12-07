@@ -4,6 +4,7 @@ author: rainbyte
 published: 2019-12-07 02:51:00
 tags: gnome
 language: es
+commentsIssue: 3
 ---
 
 ## Plantillas de Gnome
