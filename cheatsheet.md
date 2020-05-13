@@ -39,6 +39,10 @@ title: Useful commands and snippets cheatsheet
 - Remove unneeded deps: `flatpak remove --unused`
 - Show running apps: `flatpak ps`
 
+## git
+
+- List previous states for recovery: `git reflog show`
+
 ## haskell stack
 
 - Custom cache: `stack --work-dir $cache $cmd`
