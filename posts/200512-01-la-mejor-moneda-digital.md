@@ -73,7 +73,8 @@ lo sea, por el contrario demostró rechazo al espíritu de esa solución. Por el
 se estima que el país busca reservar cierto control sobre la emisión y las
 cuentas, lo cual señala elevada centralización, contraria al enfoque inicial.
 
-No se hicieron comunicados sobre la disponibilidad de esta nueva moneda a nivel
+No se hicieron comunicados sobre la futura disponibilidad de esta nueva moneda
+a nivel
 global, pero son evidentes los planes de utilizarla como único medio para
 liquidar grandes transacciones provenientes de empresas e instituciones en el
 exterior, lo cual coincide con los rumores de que el país se esta deshaciendo
