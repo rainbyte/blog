@@ -3,6 +3,7 @@ title: ¿Es la moneda digital China la mejor opción para el mundo?
 geometry: a4paper,margin=2.1cm
 author: rainbyte
 published: 2020-05-12 20:03:00
+updated: 2020-05-12 21:20:00
 tags: cryptocurrency, nanocurrency, xrb 
 language: es
 commentsIssue: 4
@@ -48,8 +49,8 @@ cualidades que nos permiten conocer su naturaleza desde ciertas perspectivas:
   donde un número limitado de entes poseen un alto grado de control.
 - Inmutabilidad: posibilidad de modificar transacciones ya realizadas, ya sea
   cambiar su monto, destinatario, o incluso cancelarlas.
-- Privacidad: posibilidad de conocer datos específicos sobre una transacción,
-  como ser su monto, los usuarios implicados, la fecha exacta, etc.
+- Privacidad: nivel de protección de los datos específicos sobre una transacción,
+  como su monto, los usuarios implicados, la fecha exacta, etc.
 - Emisión y distribución: ¿Se generan más unidades monetarias? ¿Bajo qué
   condiciones? ¿Cómo llega ese dinero a los usuarios?
 - Contratos inteligentes: posibilidad de programar contratos que son verificados
@@ -73,9 +74,10 @@ se estima que el país busca reservar cierto control sobre la emisión y las
 cuentas, lo cual señala elevada centralización, contraria al enfoque inicial.
 
 No se hicieron comunicados sobre la disponibilidad de la moneda a nivel global,
-pero se menciono su utilización para liquidar grandes transacciones desde y
-hacia empresas e instituciones en el exterior, lo cual coincide con ciertos
-rumores de que el país se esta deshaciendo de sus reservas en dólares.
+pero son evidentes planes de utilizar la nueva moneda como único medio para
+liquidar grandes transacciones provenientes de empresas e instituciones en el
+exterior, lo cual coincide con los rumores de que el país se esta deshaciendo
+de sus reservas en dólares.
 
 Se desconoce si la moneda dará soporte para alguna clase de contrato inteligente,
 pero los sistemas centralizados son inadecuados para contratos confiables, y se
@@ -109,17 +111,20 @@ internet.
 
 A modo informativo describimos algunos ejemplos y sus características:
 
-- [Bitcoin][site-bitcoin] (2008 `blockchain`): el sistema más popular de este tipo, pero ha
+- [Bitcoin][site-bitcoin] (2008 `blockchain`): el sistema más popular de este
+  tipo, pero ha
   mostrado limitaciones de escalabilidad y un alto consumo energético. Una
   transacción toma tiempos mayores a 20 minutos y la comisión ronda 3 USD
   (Mayo 2020). Emite 12.5 monedas cada 10 minutos, hasta 21 millones.
   Sitio web, [https://bitcoin.org][site-bitcoin]
-- [Ethereum][site-ethereum] (2015 `blockchain`): mediante contratos inteligentes permite crear
+- [Ethereum][site-ethereum] (2015 `blockchain`): mediante contratos inteligentes
+  permite crear
   aplicaciones autónomas que interactúan con los usuarios. Una transacción tarda
   unos 6 minutos y la comisión rondan 0.11 USD (Mayo 2020), emite 2 monedas cada
   15 segundos, sin limite.
   Sitio web, [https://ethereum.org][site-ethereum]
-- [Nano XRB][site-nano] (2015 `block-lattice`): puede realizar transacciones inmutables en
+- [Nano XRB][site-nano] (2015 `block-lattice`): puede realizar transacciones
+  inmutables en
   tiempo menor a 0.2 segundos, es libre de comisiones, ya que la red prioriza
   la eficiencia y minimiza los costos de consumo eléctrico. Existen solo 133
   millones de monedas, la emisión y distribución finalizó.
