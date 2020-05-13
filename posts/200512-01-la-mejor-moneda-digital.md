@@ -3,7 +3,7 @@ title: ¿Es la moneda digital China la mejor opción para el mundo?
 geometry: a4paper,margin=2.1cm
 author: rainbyte
 published: 2020-05-12 20:03:00
-updated: 2020-05-12 21:37:00
+updated: 2020-05-12 21:50:00
 tags: cryptocurrency, nanocurrency, xrb 
 language: es
 commentsIssue: 4
@@ -73,8 +73,8 @@ lo sea, por el contrario demostró rechazo al espíritu de esa solución. Por el
 se estima que el país busca reservar cierto control sobre la emisión y las
 cuentas, lo cual señala elevada centralización, contraria al enfoque inicial.
 
-No se hicieron comunicados sobre la disponibilidad de la moneda a nivel global,
-pero son evidentes los planes de utilizar la nueva moneda como único medio para
+No se hicieron comunicados sobre la disponibilidad de esta nueva moneda a nivel
+global, pero son evidentes los planes de utilizarla como único medio para
 liquidar grandes transacciones provenientes de empresas e instituciones en el
 exterior, lo cual coincide con los rumores de que el país se esta deshaciendo
 de sus reservas en dólares.
