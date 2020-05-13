@@ -39,6 +39,16 @@ title: Useful commands and snippets cheatsheet
 - Remove unneeded deps: `flatpak remove --unused`
 - Show running apps: `flatpak ps`
 
+## haskell stack
+
+- Custom cache: `stack --work-dir $cache $cmd`
+- Profiling build: `stack build --profile`
+- Profiling exec: `stack exec --profile -- $executable +RTS $options`
+
+## javascript
+
+- Parse number before a dot: `content.split('.', 1)[0]`
+
 ## gnome extensions
 
 - Reload: `gnome-shell-extension-tool -r $extension-uuid`
