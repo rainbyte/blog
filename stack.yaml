@@ -1,7 +1,7 @@
 # For more information, see: http://docs.haskellstack.org/en/stable/yaml_configuration.html
 
 # Specifies the GHC version and set of packages available (e.g., lts-3.5, nightly-2015-09-21, ghc-7.10.2)
-resolver: lts-14.16
+resolver: lts-15.12
 
 # Local packages, usually specified by relative directory name
 packages:
@@ -9,7 +9,7 @@ packages:
 
 # Packages to be pulled from upstream that are not in the resolver (e.g., acme-missiles-0.3)
 extra-deps:
-- hakyll-4.13.0.1@sha256:0f27d74feaedc96648ec5377ecec2b35dd677516c9667d179462a350f2075628,8817
+- hakyll-4.13.3.0@sha256:7d8903f03974691aec049a6188ace8d93457563bad9f078c6faf4c9156e27a33
 
 allow-newer: true
 

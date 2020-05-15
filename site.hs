@@ -3,6 +3,7 @@
 import           Control.Monad.State.Class
 import           Data.List (intercalate)
 import           Data.Monoid ((<>))
+import           Data.Text (pack, unpack)
 import           Hakyll
 import           Text.Pandoc.Definition
 import           Text.Pandoc.Walk
@@ -137,9 +138,9 @@ transformCustomMarkdownRuby :: Pandoc -> Pandoc
 transformCustomMarkdownRuby = walk handleInline
   where
     handleInline :: Inline -> Inline
-    handleInline (Str s) = case (parse markdownRuby "" s) of
+    handleInline (Str s) = case (parse markdownRuby "" $ unpack s) of
         (Left _)     -> Str s
-        (Right rubies) -> RawInline (Format "html") (rubiesToHtml rubies)
+        (Right rubies) -> RawInline (Format "html") $ pack (rubiesToHtml rubies)
     handleInline x       = x
     markdownRuby :: Parsec String () [(String,[(String,String)],String)]
     markdownRuby = many $ choice [try ruby, fallback]
