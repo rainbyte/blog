@@ -4,7 +4,7 @@ author: rainbyte
 published: 2020-05-18 05:23:00
 tags: android, async, coroutines, kotlin 
 language: es
-commentsIssue:
+commentsIssue: 5
 ---
 
 When we need to execute time intensive computations and show some the result
