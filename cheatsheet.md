@@ -46,6 +46,8 @@ title: Useful commands and snippets cheatsheet
 ## haskell stack
 
 - Custom cache: `stack --work-dir $cache $cmd`
+- Docs build: `stack haddock`
+- Docs open: `stack haddock --open $package`
 - Profiling build: `stack build --profile`
 - Profiling exec: `stack exec --profile -- $executable +RTS $options`
 
