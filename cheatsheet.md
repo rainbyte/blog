@@ -2,13 +2,21 @@
 title: Useful commands and snippets cheatsheet
 ---
 
+## awk
+
+- AndroidSdk installed pkgs: `sdkmanager --list | awk '/Installed/{flag=1; next} /Available/{flag=0} flag'`
+
 ## common terminal tasks
 
+- Backup via ssh: `rsync -auv -e 'ssh -p $port' $hostname:'"/orig/"' '/dest/'`
+- Cmd info (detailed): `man $command`
+- Cmd info (summary): `tldr $command`
 - Find files: `find $root-path -name "$file-pattern"`
 - Find dirs: `find $root-path -name "$file-pattern" -type d`
 - Follow logs: `tail -f $logfile`
-- Cmd info (detailed): `man $command`
-- Cmd info (summary): `tldr $command`
+- Process json: `curl $url | jq $json-query`
+- Sed delete line: `sed -i "${line-number}d" $file`
+- Sed replace str: `sed -i "s/$before/$after/g" $file`
 
 ## dbus interaction
 
@@ -24,6 +32,8 @@ title: Useful commands and snippets cheatsheet
 - Torrent: `aria2c $torrent-file`
 - Site (spider copy): `httrack $url --path $folder`
 - Site (single page): `httrack $url --path $folder --near --robots=0 --depth=1`
+- Youtube video: `youtube-dl -k -x --prefer-free-formats --all-subs -f bestvideo[height<=720]+bestaudio/best --rm-cache $url`
+`
 
 ## fish
 
@@ -34,6 +44,7 @@ title: Useful commands and snippets cheatsheet
 
 - App info (installed): `flatpak info $app`
 - App info (remote): `flatpak remote-info $repo --app $app`
+- Custom list: `flatpak list --columns=name,application,version,runtime,size,origin`
 - Expose folder to app: `flatpak --filesystem=$folder:ro $app`
 - Expose envvar to app: `flatpak --env=$envvar=$value $app`
 - Remove unneeded deps: `flatpak remove --unused`
@@ -51,6 +62,11 @@ title: Useful commands and snippets cheatsheet
 - Profiling build: `stack build --profile`
 - Profiling exec: `stack exec --profile -- $executable +RTS $options`
 
+## image processing
+
+- Get img size: `identify -format "%wx%h" $img-file`
+- Resize img: `convert $img-orig -resize $wx$h $img-dest`
+
 ## javascript
 
 - Parse number before a dot: `content.split('.', 1)[0]`
@@ -58,8 +74,8 @@ title: Useful commands and snippets cheatsheet
 ## gnome extensions
 
 - Reload: `gnome-shell-extension-tool -r $extension-uuid`
-- Enable: `gnome-shell-extension-tool -e $extension-uuid`
-- Disable:  `gnome-shell-extension-tool -d $extension-uuid`
+- Enable: `gnome-extensions enable $extension-uuid`
+- Disable:  `gnome-extensions disable $extension-uuid`
 - Paths:
   - System: `/usr/share/gnome-shell/extensions/`
   - User: `$HOME/.local/share/gnome-shell/extensions/`
@@ -68,6 +84,11 @@ title: Useful commands and snippets cheatsheet
 
 - Connect: `mysql -D $db-name -u $db-user -p`
 - Dump: `mysqldump -u $db-user $db-name > $file`
+
+## package management (arch)
+
+- Gen checksums: `makepkg -g`
+- Gen .SRCINFO: `makepkg --printsrcinfo > .SRCINFO`
 
 ## python
 
