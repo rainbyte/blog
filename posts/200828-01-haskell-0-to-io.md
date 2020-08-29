@@ -2,6 +2,7 @@
 title: Haskell from 0 to IO (Maybe Hero)
 author: rainbyte
 published: 2020-08-28 03:56:00
+updated: 2020-08-29 06:42:00
 tags: haskell, io, monad, typeclasses
 language: en
 commentsIssue: 6
@@ -67,6 +68,18 @@ num =
 main = print num
 ```
 
+Other way to have local definitions is to attach a `where` section, the
+following code is equivalent to the previous one:
+
+```haskell
+num = x + y -- use definitions
+  where
+    x = 5  -- define x
+    y = 10 -- define y
+
+main = print num
+```
+
 ## Types
 
 Carefully designed types reject unwanted values by making them unrepresentable.
@@ -125,7 +138,7 @@ The `Maybe` type is parametrized and represents the existence of something with
 a generic type `t`, avoiding the use of `null` at all.
 
 ```haskell
-data Maybe t = Just t | Nothing
+data Maybe t = Nothing | Just t
 ```
 
 `Pattern matching` also works with parametrized types:
@@ -202,6 +215,25 @@ h = g . f -- be careful with the order
 main = print (h 2)
 ```
 
+There is also an `$` operator, called "application", usually used to change
+precedence and avoid extra parenthesis. You can think of it as having
+parenthesis at both sides.
+
+Here we have equivalent `main` implementations, choose the one you prefer.
+
+```haskell
+f :: Int -> Int
+f x = x + 1
+
+-- all of these are equivalent
+main1 = print . f $ 3 + 4
+main2 = (print . f) $ (3 + 4)
+main3 = (print . f) (3 + 4)
+main4 = print (f (3 + 4))
+
+main = main1
+```
+
 A function can give a function as result and we can use this mechanism
 to make new definitions:
 
@@ -250,23 +282,12 @@ main = print (g f) -- g consumes f function
 `Pattern matching` can also be used to define a function piece-by-piece
 
 ```haskell
+fib :: Int -> Int
 fib 0 = 0
 fib 1 = 1
 fib x = fib (x - 1) + fib (x - 2)
 
 main = print (fib 10)
-```
-
-Definitions can be shared across function pieces using a `where` section
-
-```haskell
-g 0 = 1 + y + z
-g x = x + y + z
-  where
-    y = 5
-    z = 10
-
-main = print (g 2)
 ```
 
 ## Typeclasses
@@ -300,9 +321,9 @@ operations from that set.
 
 ```haskell
 class Eq b => Ord b where
-    compare              :: a -> a -> Ordering
-    (<), (<=), (>=), (>) :: a -> a -> Bool
-    max, min             :: a -> a -> a
+    compare              :: b -> b -> Ordering
+    (<), (<=), (>=), (>) :: b -> b -> Bool
+    max, min             :: b -> b -> b
 ```
 
 Typeclass implementation is done via instances for each type.
@@ -361,7 +382,7 @@ class Show a where
     -- plus other definitions
 ```
 
-Given that `show` function takes something an produces a `String`, then
+Given that `show` function takes something and produces a `String`, then
 that function is the missing piece.
 
 Then we can infer that `print` type is `Show a => a -> IO ()`, so `a`
@@ -375,8 +396,8 @@ print x = putStrLn (show x)
 ```
 
 As we can see, it uses `show` to obtain an `String`, which will be consumed
-by the `putStrLn`, and that is one that has the `String -> IO ()` type we
-thought before.
+by the `putStrLn` function, and that is the one that has the `String -> IO ()`
+type we thought before.
 
 We will see soon how to write bigger programs using `IO a` type, but first
 we should talk a bit more about typeclasses.
@@ -533,7 +554,7 @@ because they will become familiar as time passes.
 
     ```haskell
     class Applicative m => Monad m where
-        (>>=) :: forall a b. m a -> (a -> m b) -> m b
+        (>>=) :: m a -> (a -> m b) -> m b
         -- other definitions...
     ```
 
