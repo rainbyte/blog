@@ -12,6 +12,10 @@ import           Text.Parsec
 
 main :: IO ()
 main = hakyllWith customSiteConfig $ do
+    match "CNAME" $ do
+        route   idRoute
+        compile copyFileCompiler
+
     match "images/*" $ do
         route   idRoute
         compile copyFileCompiler
